@@ -1,0 +1,472 @@
+2025-04-03 20:14:41,065 - football_highlights - INFO - Gemini API configured successfully
+2025-04-03 20:14:41,138 - football_highlights - INFO - Starting Streamlit application
+2025-04-03 20:14:53,876 - football_highlights - INFO - Starting Streamlit application
+2025-04-03 20:14:53,891 - football_highlights - INFO - File uploaded: videoplayback (1).mp4 (78.24 MB)
+2025-04-03 20:14:53,949 - football_highlights - INFO - File saved to temporary path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpd67ytu0h.mp4
+2025-04-03 20:14:56,458 - football_highlights - INFO - Starting Streamlit application
+2025-04-03 20:14:56,486 - football_highlights - INFO - File uploaded: videoplayback (1).mp4 (78.24 MB)
+2025-04-03 20:14:56,593 - football_highlights - INFO - File saved to temporary path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpps3fwh48.mp4
+2025-04-03 20:14:56,666 - football_highlights - INFO - Highlight generation process started
+2025-04-03 20:14:56,667 - football_highlights - INFO - Starting football highlight detection for: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpps3fwh48.mp4
+2025-04-03 20:14:56,668 - football_highlights - INFO - Step 1: Segmenting video...
+2025-04-03 20:14:56,668 - football_highlights - INFO - Starting video segmentation process for /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpps3fwh48.mp4
+2025-04-03 20:14:56,668 - football_highlights - INFO - Segment length: 300 seconds
+2025-04-03 20:14:56,884 - football_highlights - INFO - Video loaded: duration=1008.91s, fps=30.0, size=[640, 360]
+2025-04-03 20:14:56,884 - football_highlights - INFO - Splitting video into 4 segments
+2025-04-03 20:14:56,884 - football_highlights - INFO - Creating segment 1/4: 0s to 300s (duration: 300.00s)
+2025-04-03 20:14:56,885 - football_highlights - DEBUG - Created temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpa7_793rw.mp4
+2025-04-03 20:14:56,885 - football_highlights - INFO - Writing segment to /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpa7_793rw.mp4
+2025-04-03 20:15:48,802 - football_highlights - INFO - Segment 1 created successfully in 51.92s
+2025-04-03 20:15:48,803 - football_highlights - DEBUG - Segment file size: 27.78 MB
+2025-04-03 20:15:48,803 - football_highlights - INFO - Creating segment 2/4: 300s to 600s (duration: 300.00s)
+2025-04-03 20:15:48,805 - football_highlights - DEBUG - Created temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpm0k5lcr2.mp4
+2025-04-03 20:15:48,805 - football_highlights - INFO - Writing segment to /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpm0k5lcr2.mp4
+2025-04-03 20:16:36,979 - football_highlights - INFO - Segment 2 created successfully in 48.18s
+2025-04-03 20:16:36,980 - football_highlights - DEBUG - Segment file size: 28.83 MB
+2025-04-03 20:16:36,980 - football_highlights - INFO - Creating segment 3/4: 600s to 900s (duration: 300.00s)
+2025-04-03 20:16:36,981 - football_highlights - DEBUG - Created temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp609nmoni.mp4
+2025-04-03 20:16:36,981 - football_highlights - INFO - Writing segment to /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp609nmoni.mp4
+2025-04-03 20:17:26,332 - football_highlights - INFO - Segment 3 created successfully in 49.35s
+2025-04-03 20:17:26,333 - football_highlights - DEBUG - Segment file size: 29.84 MB
+2025-04-03 20:17:26,333 - football_highlights - INFO - Creating segment 4/4: 900s to 1008.91s (duration: 108.91s)
+2025-04-03 20:17:26,334 - football_highlights - DEBUG - Created temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpc3vyzwle.mp4
+2025-04-03 20:17:26,334 - football_highlights - INFO - Writing segment to /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpc3vyzwle.mp4
+2025-04-03 20:17:42,092 - football_highlights - INFO - Segment 4 created successfully in 15.76s
+2025-04-03 20:17:42,092 - football_highlights - DEBUG - Segment file size: 10.86 MB
+2025-04-03 20:17:42,093 - football_highlights - INFO - Video segmentation completed: 4 segments created in 165.43s
+2025-04-03 20:17:42,093 - football_highlights - INFO - Video segmentation completed in 165.43s: 4 segments created
+2025-04-03 20:17:42,093 - football_highlights - INFO - Step 2: Analyzing segments for highlights...
+2025-04-03 20:17:42,093 - football_highlights - INFO - Starting analysis of 4 video segments in parallel
+2025-04-03 20:17:42,094 - football_highlights - INFO - Analyzing segment from 0 to 300 (duration: 300s)
+2025-04-03 20:17:42,094 - football_highlights - DEBUG - Segment file path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpa7_793rw.mp4
+2025-04-03 20:17:42,094 - football_highlights - INFO - Using model: gemini-2.0-flash-exp
+2025-04-03 20:17:42,111 - football_highlights - INFO - Video loaded: 27.78 MB
+2025-04-03 20:17:42,111 - football_highlights - INFO - API Request - Model: gemini-2.0-flash-exp
+2025-04-03 20:17:42,112 - football_highlights - INFO - API Request - Multimodal: True
+2025-04-03 20:17:42,112 - football_highlights - DEBUG - API Request - Prompt: 
+    Analyze this football video segment and identify potential highlight moments.
+    Look for:
+    1. Goals
+    2. Near misses
+    3. Great saves
+    4. Skillful plays
+    5. Fouls or cards
+    
+    Return a JSON list of objects with:
+    1. timestamp_seconds (relative to this segment)
+    2. event_type (from the categories above)
+    3. confidence_score (0-1)
+    
+    Example format:
+    [
+      {"timestamp_seconds": 45.2, "event_type": "Goal", "confidence_score": 0.95},
+      {"timestamp_sec...
+2025-04-03 20:17:42,112 - football_highlights - INFO - Sending video analysis request to Gemini API...
+2025-04-03 20:17:58,049 - football_highlights - INFO - API Response received in 15.94s
+2025-04-03 20:17:58,050 - football_highlights - DEBUG - API Response: Here are the potential highlight moments from the video segment:
+
+```json
+[
+  {"timestamp_seconds": 35.0, "event_type": "Great save", "confidence_score": 0.90},
+  {"timestamp_seconds": 58.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 100.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 114.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 157.0, "event_type": "Near misses", "confidence_score": 0.80},
+  {"timestamp_seconds": 200.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 210.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 217.0, "event_type": "Near misses", "confidence_score": 0.75},
+  {"timestamp_seconds": 315.0, "event_type": "Near misses", "confidence_score": 0.80},
+  {"timestamp_seconds": 354.0, "event_type": "Goal", "confidence_score": 0.95}
+]
+```
+2025-04-03 20:17:58,050 - football_highlights - INFO - Parsing response for highlight timestamps
+2025-04-03 20:17:58,050 - football_highlights - INFO - JSON structure found in response
+2025-04-03 20:17:58,051 - football_highlights - DEBUG - Parsed highlights data:
+[
+  {
+    "timestamp_seconds": 35.0,
+    "event_type": "Great save",
+    "confidence_score": 0.9
+  },
+  {
+    "timestamp_seconds": 58.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 100.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 114.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 157.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.8
+  },
+  {
+    "timestamp_seconds": 200.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 210.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 217.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 315.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.8
+  },
+  {
+    "timestamp_seconds": 354.0,
+    "event_type": "Goal",
+    "confidence_score": 0.95
+  }
+]
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #1: Great save at 35.00s (confidence: 0.9)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #2: Near misses at 58.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #3: Near misses at 100.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #4: Near misses at 114.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #5: Near misses at 157.00s (confidence: 0.8)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #6: Near misses at 200.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #7: Near misses at 210.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #8: Near misses at 217.00s (confidence: 0.75)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #9: Near misses at 315.00s (confidence: 0.8)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Highlight #10: Goal at 354.00s (confidence: 0.95)
+2025-04-03 20:17:58,051 - football_highlights - INFO - Found 10 highlights in segment 0-300
+2025-04-03 20:17:58,052 - football_highlights - INFO - Analyzing segment from 300 to 600 (duration: 300s)
+2025-04-03 20:17:58,053 - football_highlights - DEBUG - Segment file path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpm0k5lcr2.mp4
+2025-04-03 20:17:58,053 - football_highlights - INFO - Using model: gemini-2.0-flash-exp
+2025-04-03 20:17:58,071 - football_highlights - INFO - Video loaded: 28.83 MB
+2025-04-03 20:17:58,071 - football_highlights - INFO - API Request - Model: gemini-2.0-flash-exp
+2025-04-03 20:17:58,071 - football_highlights - INFO - API Request - Multimodal: True
+2025-04-03 20:17:58,071 - football_highlights - DEBUG - API Request - Prompt: 
+    Analyze this football video segment and identify potential highlight moments.
+    Look for:
+    1. Goals
+    2. Near misses
+    3. Great saves
+    4. Skillful plays
+    5. Fouls or cards
+    
+    Return a JSON list of objects with:
+    1. timestamp_seconds (relative to this segment)
+    2. event_type (from the categories above)
+    3. confidence_score (0-1)
+    
+    Example format:
+    [
+      {"timestamp_seconds": 45.2, "event_type": "Goal", "confidence_score": 0.95},
+      {"timestamp_sec...
+2025-04-03 20:17:58,071 - football_highlights - INFO - Sending video analysis request to Gemini API...
+2025-04-03 20:18:13,309 - football_highlights - INFO - API Response received in 15.24s
+2025-04-03 20:18:13,309 - football_highlights - DEBUG - API Response: Okay, here's a JSON list of potential highlight moments from the football video segment:
+
+```json
+[
+  {"timestamp_seconds": 1.0, "event_type": "Goal", "confidence_score": 0.98},
+  {"timestamp_seconds": 38.6, "event_type": "Massive Leap", "confidence_score": 0.85},
+  {"timestamp_seconds": 123.0, "event_type": "Great save", "confidence_score": 0.95},
+  {"timestamp_seconds": 253.0, "event_type": "Near miss", "confidence_score": 0.8},
+  {"timestamp_seconds": 346.0, "event_type": "Foul or card", "confidence_score": 0.9},
+  {"timestamp_seconds": 413.5, "event_type": "Goal", "confidence_score": 0.98},
+  {"timestamp_seconds": 450.0, "event_type": "Near miss", "confidence_score": 0.75}
+]
+```
+2025-04-03 20:18:13,309 - football_highlights - INFO - Parsing response for highlight timestamps
+2025-04-03 20:18:13,310 - football_highlights - INFO - JSON structure found in response
+2025-04-03 20:18:13,310 - football_highlights - DEBUG - Parsed highlights data:
+[
+  {
+    "timestamp_seconds": 1.0,
+    "event_type": "Goal",
+    "confidence_score": 0.98
+  },
+  {
+    "timestamp_seconds": 38.6,
+    "event_type": "Massive Leap",
+    "confidence_score": 0.85
+  },
+  {
+    "timestamp_seconds": 123.0,
+    "event_type": "Great save",
+    "confidence_score": 0.95
+  },
+  {
+    "timestamp_seconds": 253.0,
+    "event_type": "Near miss",
+    "confidence_score": 0.8
+  },
+  {
+    "timestamp_seconds": 346.0,
+    "event_type": "Foul or card",
+    "confidence_score": 0.9
+  },
+  {
+    "timestamp_seconds": 413.5,
+    "event_type": "Goal",
+    "confidence_score": 0.98
+  },
+  {
+    "timestamp_seconds": 450.0,
+    "event_type": "Near miss",
+    "confidence_score": 0.75
+  }
+]
+2025-04-03 20:18:13,310 - football_highlights - INFO - Highlight #1: Goal at 301.00s (confidence: 0.98)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #2: Massive Leap at 338.60s (confidence: 0.85)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #3: Great save at 423.00s (confidence: 0.95)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #4: Near miss at 553.00s (confidence: 0.8)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #5: Foul or card at 646.00s (confidence: 0.9)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #6: Goal at 713.50s (confidence: 0.98)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Highlight #7: Near miss at 750.00s (confidence: 0.75)
+2025-04-03 20:18:13,311 - football_highlights - INFO - Found 7 highlights in segment 300-600
+2025-04-03 20:18:13,313 - football_highlights - INFO - Analyzing segment from 600 to 900 (duration: 300s)
+2025-04-03 20:18:13,313 - football_highlights - DEBUG - Segment file path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp609nmoni.mp4
+2025-04-03 20:18:13,313 - football_highlights - INFO - Using model: gemini-2.0-flash-exp
+2025-04-03 20:18:13,332 - football_highlights - INFO - Video loaded: 29.84 MB
+2025-04-03 20:18:13,332 - football_highlights - INFO - API Request - Model: gemini-2.0-flash-exp
+2025-04-03 20:18:13,332 - football_highlights - INFO - API Request - Multimodal: True
+2025-04-03 20:18:13,332 - football_highlights - DEBUG - API Request - Prompt: 
+    Analyze this football video segment and identify potential highlight moments.
+    Look for:
+    1. Goals
+    2. Near misses
+    3. Great saves
+    4. Skillful plays
+    5. Fouls or cards
+    
+    Return a JSON list of objects with:
+    1. timestamp_seconds (relative to this segment)
+    2. event_type (from the categories above)
+    3. confidence_score (0-1)
+    
+    Example format:
+    [
+      {"timestamp_seconds": 45.2, "event_type": "Goal", "confidence_score": 0.95},
+      {"timestamp_sec...
+2025-04-03 20:18:13,332 - football_highlights - INFO - Sending video analysis request to Gemini API...
+2025-04-03 20:18:30,616 - football_highlights - INFO - API Response received in 17.28s
+2025-04-03 20:18:30,616 - football_highlights - DEBUG - API Response: Here are the potential highlight moments from the provided football video segment:
+
+```json
+[
+  {"timestamp_seconds": 24.4, "event_type": "Near misses", "confidence_score": 0.7},
+  {"timestamp_seconds": 41.5, "event_type": "Near misses", "confidence_score": 0.7},
+  {"timestamp_seconds": 70.6, "event_type": "Foul or cards", "confidence_score": 0.9},
+  {"timestamp_seconds": 209.1, "event_type": "Great save", "confidence_score": 0.75},
+  {"timestamp_seconds": 247.1, "event_type": "Goal", "confidence_score": 0.95},
+  {"timestamp_seconds": 305.2, "event_type": "Near misses", "confidence_score": 0.7},
+  {"timestamp_seconds": 430.3, "event_type": "Goal", "confidence_score": 0.95}
+]
+```
+2025-04-03 20:18:30,616 - football_highlights - INFO - Parsing response for highlight timestamps
+2025-04-03 20:18:30,616 - football_highlights - INFO - JSON structure found in response
+2025-04-03 20:18:30,616 - football_highlights - DEBUG - Parsed highlights data:
+[
+  {
+    "timestamp_seconds": 24.4,
+    "event_type": "Near misses",
+    "confidence_score": 0.7
+  },
+  {
+    "timestamp_seconds": 41.5,
+    "event_type": "Near misses",
+    "confidence_score": 0.7
+  },
+  {
+    "timestamp_seconds": 70.6,
+    "event_type": "Foul or cards",
+    "confidence_score": 0.9
+  },
+  {
+    "timestamp_seconds": 209.1,
+    "event_type": "Great save",
+    "confidence_score": 0.75
+  },
+  {
+    "timestamp_seconds": 247.1,
+    "event_type": "Goal",
+    "confidence_score": 0.95
+  },
+  {
+    "timestamp_seconds": 305.2,
+    "event_type": "Near misses",
+    "confidence_score": 0.7
+  },
+  {
+    "timestamp_seconds": 430.3,
+    "event_type": "Goal",
+    "confidence_score": 0.95
+  }
+]
+2025-04-03 20:18:30,616 - football_highlights - INFO - Highlight #1: Near misses at 624.40s (confidence: 0.7)
+2025-04-03 20:18:30,616 - football_highlights - INFO - Highlight #2: Near misses at 641.50s (confidence: 0.7)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Highlight #3: Foul or cards at 670.60s (confidence: 0.9)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Highlight #4: Great save at 809.10s (confidence: 0.75)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Highlight #5: Goal at 847.10s (confidence: 0.95)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Highlight #6: Near misses at 905.20s (confidence: 0.7)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Highlight #7: Goal at 1030.30s (confidence: 0.95)
+2025-04-03 20:18:30,617 - football_highlights - INFO - Found 7 highlights in segment 600-900
+2025-04-03 20:18:30,618 - football_highlights - INFO - Analyzing segment from 900 to 1008.91 (duration: 108.90999999999997s)
+2025-04-03 20:18:30,618 - football_highlights - DEBUG - Segment file path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpc3vyzwle.mp4
+2025-04-03 20:18:30,618 - football_highlights - INFO - Using model: gemini-2.0-flash-exp
+2025-04-03 20:18:30,626 - football_highlights - INFO - Video loaded: 10.86 MB
+2025-04-03 20:18:30,626 - football_highlights - INFO - API Request - Model: gemini-2.0-flash-exp
+2025-04-03 20:18:30,626 - football_highlights - INFO - API Request - Multimodal: True
+2025-04-03 20:18:30,626 - football_highlights - DEBUG - API Request - Prompt: 
+    Analyze this football video segment and identify potential highlight moments.
+    Look for:
+    1. Goals
+    2. Near misses
+    3. Great saves
+    4. Skillful plays
+    5. Fouls or cards
+    
+    Return a JSON list of objects with:
+    1. timestamp_seconds (relative to this segment)
+    2. event_type (from the categories above)
+    3. confidence_score (0-1)
+    
+    Example format:
+    [
+      {"timestamp_seconds": 45.2, "event_type": "Goal", "confidence_score": 0.95},
+      {"timestamp_sec...
+2025-04-03 20:18:30,626 - football_highlights - INFO - Sending video analysis request to Gemini API...
+2025-04-03 20:18:38,699 - football_highlights - INFO - API Response received in 8.07s
+2025-04-03 20:18:38,700 - football_highlights - DEBUG - API Response: Here are the potential highlight moments from the video segment:
+
+```json
+[
+  {"timestamp_seconds": 0.6, "event_type": "Great save", "confidence_score": 0.9},
+  {"timestamp_seconds": 55.0, "event_type": "Near misses", "confidence_score": 0.8},
+  {"timestamp_seconds": 128.4, "event_type": "Fouls or cards", "confidence_score": 0.7}
+]
+```
+2025-04-03 20:18:38,700 - football_highlights - INFO - Parsing response for highlight timestamps
+2025-04-03 20:18:38,700 - football_highlights - INFO - JSON structure found in response
+2025-04-03 20:18:38,700 - football_highlights - DEBUG - Parsed highlights data:
+[
+  {
+    "timestamp_seconds": 0.6,
+    "event_type": "Great save",
+    "confidence_score": 0.9
+  },
+  {
+    "timestamp_seconds": 55.0,
+    "event_type": "Near misses",
+    "confidence_score": 0.8
+  },
+  {
+    "timestamp_seconds": 128.4,
+    "event_type": "Fouls or cards",
+    "confidence_score": 0.7
+  }
+]
+2025-04-03 20:18:38,700 - football_highlights - INFO - Highlight #1: Great save at 900.60s (confidence: 0.9)
+2025-04-03 20:18:38,700 - football_highlights - INFO - Highlight #2: Near misses at 955.00s (confidence: 0.8)
+2025-04-03 20:18:38,700 - football_highlights - INFO - Highlight #3: Fouls or cards at 1028.40s (confidence: 0.7)
+2025-04-03 20:18:38,700 - football_highlights - INFO - Found 3 highlights in segment 900-1008.91
+2025-04-03 20:18:38,702 - football_highlights - INFO - Segment 1 (0-300s): 10 highlights
+2025-04-03 20:18:38,702 - football_highlights - INFO - Segment 2 (300-600s): 7 highlights
+2025-04-03 20:18:38,702 - football_highlights - INFO - Segment 3 (600-900s): 7 highlights
+2025-04-03 20:18:38,702 - football_highlights - INFO - Segment 4 (900-1008.91s): 3 highlights
+2025-04-03 20:18:38,702 - football_highlights - INFO - Total highlights found across all segments: 27
+2025-04-03 20:18:38,702 - football_highlights - INFO - Highlight analysis completed in 56.61s: 27 highlights detected
+2025-04-03 20:18:38,702 - football_highlights - INFO - Step 3: Creating highlights video...
+2025-04-03 20:18:38,702 - football_highlights - INFO - Creating highlights video from /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpps3fwh48.mp4
+2025-04-03 20:18:38,702 - football_highlights - INFO - Number of highlight timestamps: 27
+2025-04-03 20:18:38,702 - football_highlights - INFO - Buffer around each highlight: 5 seconds
+2025-04-03 20:18:38,702 - football_highlights - INFO - Loading original video...
+2025-04-03 20:18:38,898 - football_highlights - INFO - Original video loaded: duration=1008.91s, fps=30.0
+2025-04-03 20:18:38,899 - football_highlights - INFO - Extracting highlight clips...
+2025-04-03 20:18:38,899 - football_highlights - INFO - Highlight #1: timestamp=35.00s, extracting 30.00s to 40.00s (duration: 10.00s)
+2025-04-03 20:18:38,961 - football_highlights - DEBUG - Highlight #1 extracted successfully in 0.06s
+2025-04-03 20:18:38,961 - football_highlights - INFO - Highlight #2: timestamp=58.00s, extracting 53.00s to 63.00s (duration: 10.00s)
+2025-04-03 20:18:39,019 - football_highlights - DEBUG - Highlight #2 extracted successfully in 0.06s
+2025-04-03 20:18:39,020 - football_highlights - INFO - Highlight #3: timestamp=100.00s, extracting 95.00s to 105.00s (duration: 10.00s)
+2025-04-03 20:18:39,081 - football_highlights - DEBUG - Highlight #3 extracted successfully in 0.06s
+2025-04-03 20:18:39,081 - football_highlights - INFO - Highlight #4: timestamp=114.00s, extracting 109.00s to 119.00s (duration: 10.00s)
+2025-04-03 20:18:39,135 - football_highlights - DEBUG - Highlight #4 extracted successfully in 0.05s
+2025-04-03 20:18:39,135 - football_highlights - INFO - Highlight #5: timestamp=157.00s, extracting 152.00s to 162.00s (duration: 10.00s)
+2025-04-03 20:18:39,201 - football_highlights - DEBUG - Highlight #5 extracted successfully in 0.07s
+2025-04-03 20:18:39,201 - football_highlights - INFO - Highlight #6: timestamp=200.00s, extracting 195.00s to 205.00s (duration: 10.00s)
+2025-04-03 20:18:39,257 - football_highlights - DEBUG - Highlight #6 extracted successfully in 0.06s
+2025-04-03 20:18:39,258 - football_highlights - INFO - Highlight #7: timestamp=210.00s, extracting 205.00s to 215.00s (duration: 10.00s)
+2025-04-03 20:18:39,311 - football_highlights - DEBUG - Highlight #7 extracted successfully in 0.05s
+2025-04-03 20:18:39,311 - football_highlights - INFO - Highlight #8: timestamp=217.00s, extracting 212.00s to 222.00s (duration: 10.00s)
+2025-04-03 20:18:39,409 - football_highlights - DEBUG - Highlight #8 extracted successfully in 0.10s
+2025-04-03 20:18:39,409 - football_highlights - INFO - Highlight #9: timestamp=301.00s, extracting 296.00s to 306.00s (duration: 10.00s)
+2025-04-03 20:18:39,462 - football_highlights - DEBUG - Highlight #9 extracted successfully in 0.05s
+2025-04-03 20:18:39,462 - football_highlights - INFO - Highlight #10: timestamp=315.00s, extracting 310.00s to 320.00s (duration: 10.00s)
+2025-04-03 20:18:39,571 - football_highlights - DEBUG - Highlight #10 extracted successfully in 0.11s
+2025-04-03 20:18:39,571 - football_highlights - INFO - Highlight #11: timestamp=338.60s, extracting 333.60s to 343.60s (duration: 10.00s)
+2025-04-03 20:18:39,636 - football_highlights - DEBUG - Highlight #11 extracted successfully in 0.07s
+2025-04-03 20:18:39,637 - football_highlights - INFO - Highlight #12: timestamp=354.00s, extracting 349.00s to 359.00s (duration: 10.00s)
+2025-04-03 20:18:39,779 - football_highlights - DEBUG - Highlight #12 extracted successfully in 0.14s
+2025-04-03 20:18:39,780 - football_highlights - INFO - Highlight #13: timestamp=423.00s, extracting 418.00s to 428.00s (duration: 10.00s)
+2025-04-03 20:18:39,893 - football_highlights - DEBUG - Highlight #13 extracted successfully in 0.11s
+2025-04-03 20:18:39,893 - football_highlights - INFO - Highlight #14: timestamp=553.00s, extracting 548.00s to 558.00s (duration: 10.00s)
+2025-04-03 20:18:39,966 - football_highlights - DEBUG - Highlight #14 extracted successfully in 0.07s
+2025-04-03 20:18:39,966 - football_highlights - INFO - Highlight #15: timestamp=624.40s, extracting 619.40s to 629.40s (duration: 10.00s)
+2025-04-03 20:18:40,018 - football_highlights - DEBUG - Highlight #15 extracted successfully in 0.05s
+2025-04-03 20:18:40,018 - football_highlights - INFO - Highlight #16: timestamp=641.50s, extracting 636.50s to 646.50s (duration: 10.00s)
+2025-04-03 20:18:40,115 - football_highlights - DEBUG - Highlight #16 extracted successfully in 0.10s
+2025-04-03 20:18:40,115 - football_highlights - INFO - Highlight #17: timestamp=646.00s, extracting 641.00s to 651.00s (duration: 10.00s)
+2025-04-03 20:18:40,169 - football_highlights - DEBUG - Highlight #17 extracted successfully in 0.05s
+2025-04-03 20:18:40,170 - football_highlights - INFO - Highlight #18: timestamp=670.60s, extracting 665.60s to 675.60s (duration: 10.00s)
+2025-04-03 20:18:40,222 - football_highlights - DEBUG - Highlight #18 extracted successfully in 0.05s
+2025-04-03 20:18:40,222 - football_highlights - INFO - Highlight #19: timestamp=713.50s, extracting 708.50s to 718.50s (duration: 10.00s)
+2025-04-03 20:18:40,275 - football_highlights - DEBUG - Highlight #19 extracted successfully in 0.05s
+2025-04-03 20:18:40,275 - football_highlights - INFO - Highlight #20: timestamp=750.00s, extracting 745.00s to 755.00s (duration: 10.00s)
+2025-04-03 20:18:40,379 - football_highlights - DEBUG - Highlight #20 extracted successfully in 0.10s
+2025-04-03 20:18:40,379 - football_highlights - INFO - Highlight #21: timestamp=809.10s, extracting 804.10s to 814.10s (duration: 10.00s)
+2025-04-03 20:18:40,439 - football_highlights - DEBUG - Highlight #21 extracted successfully in 0.06s
+2025-04-03 20:18:40,439 - football_highlights - INFO - Highlight #22: timestamp=847.10s, extracting 842.10s to 852.10s (duration: 10.00s)
+2025-04-03 20:18:40,488 - football_highlights - DEBUG - Highlight #22 extracted successfully in 0.05s
+2025-04-03 20:18:40,488 - football_highlights - INFO - Highlight #23: timestamp=900.60s, extracting 895.60s to 905.60s (duration: 10.00s)
+2025-04-03 20:18:40,586 - football_highlights - DEBUG - Highlight #23 extracted successfully in 0.10s
+2025-04-03 20:18:40,586 - football_highlights - INFO - Highlight #24: timestamp=905.20s, extracting 900.20s to 910.20s (duration: 10.00s)
+2025-04-03 20:18:40,635 - football_highlights - DEBUG - Highlight #24 extracted successfully in 0.05s
+2025-04-03 20:18:40,635 - football_highlights - INFO - Highlight #25: timestamp=955.00s, extracting 950.00s to 960.00s (duration: 10.00s)
+2025-04-03 20:18:40,690 - football_highlights - DEBUG - Highlight #25 extracted successfully in 0.05s
+2025-04-03 20:18:40,690 - football_highlights - INFO - Highlight #26: timestamp=1028.40s, extracting 1023.40s to 1008.91s (duration: -14.49s)
+2025-04-03 20:18:40,690 - football_highlights - ERROR - Failed to extract highlight #26: t_start (1023.40) should be smaller than the clip's duration (1008.91).
+2025-04-03 20:18:40,690 - football_highlights - INFO - Highlight #27: timestamp=1030.30s, extracting 1025.30s to 1008.91s (duration: -16.39s)
+2025-04-03 20:18:40,690 - football_highlights - ERROR - Failed to extract highlight #27: t_start (1025.30) should be smaller than the clip's duration (1008.91).
+2025-04-03 20:18:40,691 - football_highlights - INFO - Concatenating 25 highlight clips...
+2025-04-03 20:18:40,756 - football_highlights - DEBUG - Created temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp_wjjex_m.mp4
+2025-04-03 20:18:40,756 - football_highlights - INFO - Writing final highlights video to /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp_wjjex_m.mp4 (expected duration: 250.00s)
+2025-04-03 20:19:16,551 - football_highlights - INFO - Highlights video created: 25.03 MB
+2025-04-03 20:19:16,552 - football_highlights - INFO - Highlights compilation completed in 35.86s
+2025-04-03 20:19:16,565 - football_highlights - INFO - Highlight creation process completed in 37.86s
+2025-04-03 20:19:16,566 - football_highlights - INFO - Highlights video created successfully in 37.86s: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp_wjjex_m.mp4
+2025-04-03 20:19:16,566 - football_highlights - INFO - Highlight detection process completed in 259.90s
+2025-04-03 20:19:16,567 - football_highlights - INFO - Summary: 4 segments processed, 27 highlights detected
+2025-04-03 20:19:16,649 - football_highlights - INFO - Highlight generation completed successfully in 259.90s
+2025-04-03 20:20:59,688 - football_highlights - INFO - Starting Streamlit application
+2025-04-03 20:20:59,780 - football_highlights - INFO - File uploaded: videoplayback (1).mp4 (78.24 MB)
+2025-04-03 20:20:59,977 - football_highlights - INFO - File saved to temporary path: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmprlte23g4.mp4
+2025-04-03 20:21:43,699 - football_highlights - INFO - Cleaning up temporary files
+2025-04-03 20:21:43,743 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpa7_793rw.mp4
+2025-04-03 20:21:43,789 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpps3fwh48.mp4
+2025-04-03 20:21:43,796 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmprlte23g4.mp4
+2025-04-03 20:21:43,823 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpm0k5lcr2.mp4
+2025-04-03 20:21:43,847 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp609nmoni.mp4
+2025-04-03 20:21:43,854 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmpc3vyzwle.mp4
+2025-04-03 20:21:43,863 - football_highlights - ERROR - Failed to clean up temporary files: Event loop is closed
+2025-04-03 20:21:43,863 - football_highlights - INFO - Cleaning up temporary files
+2025-04-03 20:21:43,884 - football_highlights - DEBUG - Removed temporary file: /var/folders/18/7p2c2_hn3z97b935t7dr01mm0000gn/T/tmp_wjjex_m.mp4
+2025-04-03 20:21:43,884 - football_highlights - INFO - Cleaning up temporary files
+2025-04-03 20:21:43,884 - football_highlights - INFO - Cleaning up temporary files
