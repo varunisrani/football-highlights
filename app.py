@@ -13,8 +13,14 @@ api_key = None
 if is_streamlit_cloud():
     # On Streamlit Cloud, get API key from secrets
     try:
-        api_key = st.secrets["general"]["API_KEY"]
-        logger.info("API key loaded from Streamlit secrets")
+        # First try to get API key from the general section
+        try:
+            api_key = st.secrets["general"]["API_KEY"]
+            logger.info("API key loaded from Streamlit secrets general section")
+        except:
+            # Then try to get API key directly
+            api_key = st.secrets["API_KEY"]
+            logger.info("API key loaded from Streamlit secrets root level")
     except Exception as e:
         logger.error(f"Failed to load API key from Streamlit secrets: {str(e)}")
         # No API key from secrets
