@@ -5,16 +5,25 @@ import json
 import time
 from dotenv import load_dotenv
 import asyncio
-from utils import logger, log_api_request, log_api_response, log_json_data
+from utils import logger, log_api_request, log_api_response, log_json_data, is_streamlit_cloud
 
-load_dotenv()
+# Get API key from environment
+# Check if we're in Streamlit Cloud first
+if is_streamlit_cloud():
+    # On Streamlit Cloud, the API key should already be set in the environment by app.py
+    api_key = os.environ.get("API_KEY")
+    if not api_key:
+        logger.error("API_KEY not found in environment variables on Streamlit Cloud")
+        raise ValueError("API_KEY not found. Check your Streamlit secrets.")
+else:
+    # Local development - try to load from .env if not already in environment
+    load_dotenv()
+    api_key = os.environ.get("API_KEY") or os.getenv("API_KEY")
+    if not api_key:
+        logger.error("API_KEY not found in environment variables. Please set it in the .env file.")
+        raise ValueError("API_KEY not found. Check your .env file.")
 
 # Configure the Gemini API
-api_key = os.getenv("API_KEY")
-if not api_key:
-    logger.error("API_KEY not found in environment variables. Please set it in the .env file.")
-    raise ValueError("API_KEY not found. Check your .env file.")
-
 genai.configure(api_key=api_key)
 logger.info("Gemini API configured successfully")
 

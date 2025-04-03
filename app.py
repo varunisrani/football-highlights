@@ -6,15 +6,29 @@ import time
 import threading
 from dotenv import load_dotenv
 from controller_agent import process_video
-from utils import logger, save_uploaded_file, FOLDERS
+from utils import logger, save_uploaded_file, FOLDERS, is_streamlit_cloud
 
-# Load environment variables
-load_dotenv()
+# First check for Streamlit secrets
+api_key = None
+if is_streamlit_cloud():
+    # On Streamlit Cloud, get API key from secrets
+    try:
+        api_key = st.secrets["general"]["API_KEY"]
+        logger.info("API key loaded from Streamlit secrets")
+    except Exception as e:
+        logger.error(f"Failed to load API key from Streamlit secrets: {str(e)}")
+        # No API key from secrets
+else:
+    # Local development - load from .env
+    load_dotenv()
+    api_key = os.getenv("API_KEY")
+    logger.info("API key loaded from .env file")
 
-# Check API key presence
-api_key = os.getenv("API_KEY")
-if not api_key:
-    logger.error("API_KEY not found in environment. Please check your .env file.")
+# Set the API_KEY environment variable for other components to use
+if api_key:
+    os.environ["API_KEY"] = api_key
+else:
+    logger.error("API_KEY not found in environment or secrets")
 
 # Create a global variable to track progress
 progress_data = {
@@ -49,17 +63,27 @@ def main():
 
     # API key warning if missing
     if not api_key:
-        st.error("⚠️ API Key Missing: Please add your Gemini API key to the .env file.")
+        if is_streamlit_cloud():
+            st.error("⚠️ API Key Missing: Please add your Gemini API key to the Streamlit Cloud secrets. See README for instructions.")
+        else:
+            st.error("⚠️ API Key Missing: Please add your Gemini API key to the .env file.")
         st.stop()
 
+    # Display deployment info
+    cloud_status = "Streamlit Cloud" if is_streamlit_cloud() else "Local Development"
+    st.sidebar.info(f"Deployment: {cloud_status}")
+
     # Display folder paths
-    with st.expander("Storage Locations", expanded=False):
+    with st.sidebar.expander("Storage Locations", expanded=False):
         st.write("Your videos and highlights are stored in the following locations:")
         for folder_name, folder_path in FOLDERS.items():
             st.code(f"{folder_name}: {folder_path}")
     
-    # File uploader
-    uploaded_file = st.file_uploader("Choose a video file", type=["mp4", "mov", "avi"])
+    # File uploader - increase size limit for Streamlit Cloud
+    max_size_mb = 500 if is_streamlit_cloud() else 200
+    st.write(f"Maximum upload size: {max_size_mb}MB")
+    
+    uploaded_file = st.file_uploader(f"Choose a video file (max {max_size_mb}MB)", type=["mp4", "mov", "avi"])
 
     # Progress indicators that will be updated
     if "progress_bar" not in st.session_state:
@@ -71,7 +95,13 @@ def main():
     status_text_placeholder = st.empty()
 
     if uploaded_file is not None:
-        logger.info(f"File uploaded: {uploaded_file.name} ({uploaded_file.size / (1024 * 1024):.2f} MB)")
+        file_size_mb = uploaded_file.size / (1024 * 1024)
+        logger.info(f"File uploaded: {uploaded_file.name} ({file_size_mb:.2f} MB)")
+        
+        # Check file size
+        if file_size_mb > max_size_mb:
+            st.error(f"File size ({file_size_mb:.2f}MB) exceeds the maximum allowed size ({max_size_mb}MB)")
+            st.stop()
         
         # Save uploaded file to our uploads folder
         try:

@@ -1,0 +1,6 @@
+2025-04-03 20:42:31,595 - football_highlights - INFO - Ensured folder exists: /Users/varunisrani/doit/football-highlights/football_highlights/segments
+2025-04-03 20:42:31,595 - football_highlights - INFO - Ensured folder exists: /Users/varunisrani/doit/football-highlights/football_highlights/output
+2025-04-03 20:42:31,595 - football_highlights - INFO - Ensured folder exists: /Users/varunisrani/doit/football-highlights/football_highlights/uploads
+2025-04-03 20:42:32,055 - football_highlights - INFO - Gemini API configured successfully
+2025-04-03 20:42:32,056 - football_highlights - INFO - Starting Streamlit application
+2025-04-03 20:46:59,977 - football_highlights - INFO - Cleaning up temporary files

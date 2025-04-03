@@ -42,10 +42,27 @@ def setup_logging():
 # Initialize logger
 logger = setup_logging()
 
+# Check if running on Streamlit Cloud
+def is_streamlit_cloud():
+    """Check if the app is running on Streamlit Cloud"""
+    return os.environ.get('IS_STREAMLIT_CLOUD') == 'true' or '/mount/src/' in os.path.dirname(os.path.abspath(__file__))
+
 # Create folder for storing videos
 def ensure_folders_exist():
     """Create necessary folders for storing videos and output"""
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    # Determine if we're running on Streamlit Cloud
+    on_streamlit_cloud = is_streamlit_cloud()
+    logger.info(f"Running on Streamlit Cloud: {on_streamlit_cloud}")
+    
+    # Choose base directory based on environment
+    if on_streamlit_cloud:
+        # On Streamlit Cloud, use /tmp for storage (ephemeral but accessible)
+        base_dir = '/tmp'
+        logger.info("Using /tmp directory for storage on Streamlit Cloud")
+    else:
+        # For local development, use the project directory
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        logger.info(f"Using local directory for storage: {base_dir}")
     
     # Create folders
     folders = {

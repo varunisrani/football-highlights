@@ -16,7 +16,28 @@ This application automatically generates highlight reels from football videos us
 - Python 3.8 or higher
 - Google Gemini API key
 
-## Installation
+## Deployment to Streamlit Cloud
+
+### Preparation
+
+1. Fork this repository to your GitHub account
+2. Set up your Streamlit Cloud account (if you haven't already)
+3. Add your Gemini API key as a secret in Streamlit Cloud:
+   - In your Streamlit Cloud dashboard, select "Secrets"
+   - Add the following to your secrets:
+     ```
+     [general]
+     API_KEY = "your_gemini_api_key"
+     ```
+
+### Deploy on Streamlit Cloud
+
+1. Click "New app" in Streamlit Cloud
+2. Select your GitHub repository
+3. Set the main file path to: `football-highlights/app.py`
+4. Deploy!
+
+## Local Installation
 
 1. Clone this repository
 2. Install the required packages:
@@ -28,10 +49,11 @@ This application automatically generates highlight reels from football videos us
    API_KEY="your_gemini_api_key"
    ```
 
-## Usage
+## Local Usage
 
 1. Run the Streamlit application:
    ```bash
+   cd football-highlights
    streamlit run app.py
    ```
 2. Upload a football video file (MP4, MOV, or AVI format)
@@ -59,13 +81,15 @@ Logs are stored in the `logs` directory with timestamps and can be viewed in the
 
 ```
 football-highlights/
-  ├── .env                  # API key storage
+  ├── .env                  # API key storage (local development)
+  ├── .streamlit/           # Streamlit configuration
   ├── app.py                # Main Streamlit application
   ├── controller_agent.py   # Main controller logic
   ├── segmentation_agent.py # Video segmentation logic
   ├── analysis_agent.py     # Highlight detection with Gemini
   ├── highlights_agent.py   # Final highlight creation
   ├── utils.py              # Utility functions and logging
+  ├── requirements.txt      # Dependencies for deployment
   └── logs/                 # Directory for log files
 ```
 
